@@ -67,3 +67,62 @@ bash
 nodemon server.js
 
 ¡Ahora tienes un proyecto básico en Node.js! Puedes expandirlo según tus necesidades. Si tienes más preguntas o necesitas más detalles, ¡estaré encantado de ayudarte!
+
+
+
+
+-------------------------------------------------------------------------------------
+Para probar las rutas de tu API en Node.js, puedes usar varias herramientas. Las más comunes son Postman y cURL. Aquí te explicaré cómo usar ambas:
+
+1. Usar Postman
+Postman es una herramienta gráfica que te permite realizar solicitudes HTTP de manera sencilla. Aquí te muestro cómo usarla:
+
+Pasos para Usar Postman:
+Descargar e Instalar Postman:
+
+Ve a Postman y descarga la aplicación para tu sistema operativo.
+Crear una Nueva Solicitud:
+
+Abre Postman.
+Haz clic en "New" y selecciona "Request".
+Dale un nombre a tu solicitud y guarda la colección donde prefieras.
+Configurar la Solicitud:
+
+Selecciona el método (GET, POST, DELETE, etc.) en el menú desplegable.
+Introduce la URL de tu API (por ejemplo, http://localhost:3000/api/tasks).
+Si es una solicitud POST o DELETE, ve a la pestaña "Body" y selecciona "raw" y luego "JSON" del menú desplegable.
+Introduce el cuerpo de la solicitud en formato JSON, por ejemplo:
+json
+{
+    "title": "Hacer la compra"
+}
+
+Enviar la Solicitud:
+Haz clic en el botón "Send".
+Verás la respuesta en la parte inferior, incluyendo el código de estado HTTP y cualquier dato devuelto por la API.
+    
+2. Usar cURL
+cURL es una herramienta de línea de comandos que te permite realizar solicitudes HTTP. Aquí hay ejemplos de cómo usar cURL para probar tus rutas.
+
+Instalación
+Si estás en Windows, asegúrate de que cURL esté instalado (en versiones recientes de Windows, cURL viene preinstalado).
+En Linux y macOS, normalmente cURL ya está instalado.
+Ejemplos de Solicitudes con cURL:
+Agregar una Nueva Tarea:
+
+bash
+curl -X POST http://localhost:3000/api/tasks -H "Content-Type: application/json" -d "{"title": "Hacer la compra"}"
+Obtener Todas las Tareas:
+
+bash
+curl -X GET http://localhost:3000/api/tasks
+Eliminar una Tarea:
+
+bash
+curl -X DELETE http://localhost:3000/api/tasks/1
+(Sustituye 1 con el ID de la tarea que deseas eliminar).
+
+3. Ver Resultados
+En Postman, después de enviar la solicitud, verás la respuesta, que incluye datos como el cuerpo y el código de estado HTTP.
+En cURL, el resultado de la solicitud se mostrará directamente en la terminal.
+Ambas herramientas son muy efectivas para probar y depurar tu API. Si tienes más preguntas o necesitas ayuda con algo específico, ¡hazmelo saber!
